@@ -1,0 +1,282 @@
+﻿<?xml version="1.0"?>
+<data>
+	<copy>
+		<title><![CDATA[Test your credit knowledge]]></title>
+		<body><![CDATA[You know credit is important. But how much do you really know about it? <BR>Answer these questions to see just how credit savvy you are. <BR>Complete all the questions to earn your certificate.]]></body>
+		<cta><![CDATA[START!]]></cta>
+		
+		<endtitle><![CDATA[Congratulations]]></endtitle>
+		<endcopy><![CDATA[We here at Ford Credit confer upon you the title of Credit Expert. Go forth and use your knowledge to procure a brighter future.]]></endcopy>
+	</copy>
+	
+		<!--   ////////////////////////  ORANGE -->
+		<!-- TF OR MC true false or multiple choice-->
+		<topic title="Protecting Credit Orange">
+			<question text="What should you know before you sign a contract?" type="MC">
+				<choice text="Cash sale price, down payment and amount financed" correct="false"/>
+
+			</question>
+		
+			<question text="How can ID thieves get your information?"  type="MC">
+				<choice text="By stealing your purse, wallet or mail" correct="false"/>
+				<choice text="By information you use on the Internet" correct="false"/>
+
+			</question>
+		
+			<question text="Dumpster diving is:"  type="MC">
+				<choice text="When people look for usable items for their homes" correct="false"/>
+				<choice text="A form of recreation" correct="false"/>
+				<choice text="When thieves steal your trash looking for personal identifiable information" correct="true"/>
+			</question>
+				
+			<question text="Some easy ways to protect your credit are:"  type="MC">
+				<choice text="Be careful about sharing your social security number " correct="false"/>
+				<choice text="Shred old documents" correct="false"/>
+				<choice text="Carefully review your bank and credit card statements" correct="false"/>
+				<choice text="All of the above" correct="true"/>
+			</question>
+
+			<question text="The typical ID thief uses the following techniques to steal your identity:"  type="MC">
+				<choice text="Internet scams and schemes" correct="false"/>
+				<choice text="Mail theft/phone scams" correct="false"/>
+				<choice text="Fraudulent change of address" correct="false"/>
+				<choice text="All of the above" correct="true"/>
+				<choice text="All of the above" correct="true"/>
+				
+			</question>
+			
+		</topic>
+		
+		
+		
+		
+
+
+
+		
+		
+		<!--   ////////////////////////  BLUE -->
+		
+		<topic title="Setting Financial Goals Blue">
+			<question text="Some basic steps for goal setting are:"  type="MC">
+				<choice text="Develop a budget/track your spending" correct="false"/>
+				<choice text="Buy everything you want immediately in case you get bad credit" correct="false"/>
+				<choice text="Pay yourself first/put financial goals in writing" correct="false"/>
+				<choice text="Numbers one and three" correct="true"/>
+			</question>
+			
+			<question text="Tips to reduce debt are:"  type="MC">
+				<choice text="Increase minimum monthly payments" correct="false"/>
+				<choice text="Reduce credit card use" correct="false"/>
+				<choice text="Minimize impulse spending/live within your budget" correct="false"/>
+				<choice text="All of the above" correct="true"/>
+			</question>
+			<question text="How do you save money?"  type="MC">
+				<choice text="Why bother?" correct="false"/>
+				<choice text="Purchase items only when they are on sale " correct="false"/>
+				<choice text="Make a budget and include savings, and avoid impulse shopping" correct="true"/>
+			</question>
+			
+			<question text="What should you consider before purchasing a vehicle?"  type="MC">
+				<choice text="Determine what you can afford and review your credit history" correct="false"/>
+				<choice text="Identify your transportation needs and research price range and other information for the vehicle you wish to obtain" correct="false"/>
+				<choice text="Compare various finance rates available" correct="false"/>
+				<choice text="All of the above" correct="true"/>
+			</question>
+			
+			<question text="If you save $100 a month with a 12% return starting at age 25, how much will you have at age 65?"  type="MC">
+				<choice text="$48,000" correct="false"/>
+				<choice text="$159,000" correct="false"/>
+				<choice text="$1,200,000" correct="true"/>
+				
+				<choice text="$0 – You cannot save any money" correct="false"/>
+			</question>
+			
+			<question text="How much money should you keep in an account for emergencies?"  type="MC">
+				<choice text="Two weeks of your salary" correct="false"/>
+				<choice text="30 days of your salary" correct="false"/>
+				<choice text="45 days of your salary" correct="false"/>
+				<choice text="Three to six months of your salary" correct="true"/>
+			</question>
+		</topic>
+		
+		
+		
+		
+		
+		<!--   ////////////////////////   RED DONE -->
+		<topic title="Obtaining Credit Red">
+			<question text="What is Credit?" type="MC">
+				<choice text="A very good thing" correct="false"/>
+				<choice text="A promise that a borrower makes to a lender to repay money and usually interest" correct="true"/>
+				<choice text="Something you must have to succeed in life" correct="false"/>
+				<choice text="A promise that a borrower makes to a lender to repay money" correct="false"/>
+			</question>
+			<question text="What are some ways to establish credit?" type="MC">
+				<choice text="Open a secured credit card" correct="false"/>
+				<choice text="Establish a small installment loan" correct="false"/>
+				<choice text="Open a retail credit card" correct="false"/>
+				<choice text="All of the above" correct="true"/>
+			</question>
+			
+			<question text="What is the most common type of credit?" type="MC">
+				<choice text="Bad credit" correct="false"/>
+				<choice text="Good credit" correct="false"/>
+				<choice text="Revolving credit" correct="true"/>
+				<choice text="Secured credit" correct="false"/>
+			</question>
+			
+			<question text="A secured credit card can be used to help you establish credit." type="TF">
+				<choice text="TRUE" correct="true"/> <!-- yeah this is confusing... -->
+				<choice text="FALSE" correct="false"/>
+			</question>
+	
+			<question text="A cosigner is not legally obligated to make any and all payments you cannot."  type="TF">
+				<choice text="TRUE" correct="false"/>
+				<choice text="FALSE" correct="true"/>
+			</question>
+			
+			<question text="You may be able to negotiate the price of a vehicle, the apr and payment terms with your dealer."  type="TF">
+				<choice text="TRUE" correct="true"/>
+				<choice text="FALSE" correct="false"/>
+			</question>
+			
+			<question text="Revolving credit is credit that is repeatedly available up to a specified amount as periodic repayments are made. The costs, repayments and limits vary and you may pay only a portion of the balance every month."  type="TF">
+				<choice text="TRUE" correct="false"/>
+				<choice text="FALSE" correct="true"/>
+			</question>
+		</topic>
+		<!--   ////////////////////////    -->
+		
+		
+		
+				<!--   ////////////////////////  YELLOW -->
+		<topic title="Warning Signs Yellow">
+			<question text="What are the warning signs of poor credit?"  type="MC">
+				<choice text="Barely making minimum payments or being maxed out on your credit limit" correct="false"/>
+				<choice text="Being denied credit" correct="false"/>
+				<choice text="No more room in your closets" correct="false"/>
+				<choice text="First two answers" correct="true"/>
+			</question>
+
+			<question text="What should you do if you cannot make your payments?"  type="MC">
+				<choice text="Call lenders to work out a payment agreement and explain your situation" correct="true"/>
+				
+				<choice text="Do not open your mail" correct="false"/>
+				<choice text="Do not answer your phone unless you know who it is" correct="false"/>
+				<choice text="Change your phone number so lenders cannot find you" correct="false"/>
+			</question>
+			
+			<question text="Impulse purchases cause many, many credit problems."  type="TF">
+				<choice text="TRUE" correct="true"/>
+				<choice text="FALSE" correct="false"/>
+			</question>
+			
+			<question text="Cancelling an account does not erase the record of late payments."  type="TF">
+				<choice text="TRUE" correct="true"/>
+				<choice text="FALSE" correct="false"/>
+			</question>
+			
+			<question text="How long do detrimental items generally stay on your credit report?"  type="MC">
+				<choice text="One year" correct="false"/>
+				<choice text="Five years" correct="false"/>
+				<choice text="Seven years" correct="true"/>
+				<choice text="Forever" correct="false"/>
+			</question>
+			
+		</topic>
+		
+		
+		
+		
+		<!--   ////////////////////////  PURPLE -->
+		
+		<topic title="Maintaining Credit Purple">
+			<question text="How do you maintain good credit?" type="MC">
+				<choice text="Pay on time and at least the minimum due" correct="false"/>
+				<choice text="Do not make impulse purchases" correct="false"/>
+				<choice text="Call creditors if you have problems making your payments" correct="false"/>
+				<choice text="All of the above" correct="true"/>
+			</question>
+
+			<question text="Who cares about good credit?"  type="MC">
+				<choice text="Student loan lenders" correct="false"/>
+				<choice text="Insurance companies/potential employers" correct="false"/>
+				<choice text="Banks and automobile finance companies" correct="false"/>
+				<choice text="All of the above" correct="true"/>
+			</question>
+	
+			<question text="How often should you check your credit report?"  type="MC">
+				<choice text="Once a year at a minimum" correct="true"/>
+				<choice text="Twice a year" correct="false"/>
+				<choice text="When you apply for new credit" correct="false"/>
+				<choice text="When you think of it" correct="false"/>
+			</question>
+			
+			<question text="You can get a free credit report:"  type="MC">
+				<choice text="Once a year" correct="true"/>
+				<choice text="Twice a year" correct="false"/>
+				<choice text="Never - you must pay" correct="false"/>
+			</question>
+			
+			<question text="Why is credit useful?"  type="MC">
+				<choice text="Because you may not have the cash on hand to purchase large-ticket items like homes, vehicles and a college education" correct="false"/>
+				<choice text="Because the credit that is built today could be one of the keys to getting the car, apartment or even job you want in the future" correct="false"/>
+				<choice text="Both of the above" correct="true"/>
+			
+			</question>
+		</topic>
+		
+		
+		
+		
+		
+		
+		
+				<!--   ////////////////////////  GREEN -->
+		<topic title="Credit Scores Green">
+			<question text="What is a credit score?"  type="MC">
+				<choice text="A number often used by lenders to determine a person’s creditworthiness " correct="false"/>
+				<choice text="It represents the likelihood a person will repay his/her debt" correct="false"/>
+				<choice text="Something you use to get into the college of your choice" correct="false"/>
+				<choice text="The first two answers " correct="true"/>
+				
+			</question>
+			<question text="Your credit score is made up of the following:"  type="MC">
+				<choice text="Your payment history" correct="false"/>
+				<choice text="Amount of debt and length of debt" correct="false"/>
+				<choice text="Amount of new debt and the type of credit" correct="false"/>
+				<choice text="All of the above" correct="true"/>
+			</question>
+			
+			<question text="What has the biggest impact on your credit score?"  type="MC">
+				<choice text="Credit history" correct="true"/>
+				<choice text="Amount of debt" correct="false"/>
+				<choice text="Length of credit" correct="false"/>
+				<choice text="Amount of new debt" correct="false"/>
+			</question>
+	
+			<question text="An excellent credit score is considered to be 775 and above according to the major credit agencies."  type="TF">
+				<choice text="TRUE" correct="true"/>
+				<choice text="FALSE" correct="false"/>
+			</question>
+	
+			<question text="Who are the main credit reporting agencies?"  type="MC">
+				<choice text="Experian" correct="false"/>
+				<choice text="Equifax" correct="false"/>
+				<choice text="TransUnion" correct="false"/>
+				<choice text="All of the above" correct="true"/>
+			</question>
+			
+			<question text="Unpaid medical bills and tax liens can show up on your credit report."  type="TF">
+				<choice text="TRUE" correct="true"/>
+				<choice text="FALSE" correct="false"/>
+			</question>
+			
+			<question text="Your credit score can impact your access to credit and the interest rate you pay."  type="TF">
+				<choice text="TRUE" correct="true"/>
+				<choice text="FALSE" correct="false"/>
+			</question>
+	
+		</topic>
+</data>
