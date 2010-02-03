@@ -5,7 +5,7 @@
 		
 		//the contstant
 		public static const GO:String = "go";
-	//	public static const RESET:String = "RESET";
+		public static const RESETME:String = "RESETME";
 		
 	
 		/* constructor	*/ 
