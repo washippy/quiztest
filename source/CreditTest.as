@@ -70,7 +70,7 @@
 			QUIZ = new Quiz();
 			FADEBLOCK= new fadeblock();
 			
-		//	this.addEventListener(TimeLineEvent.RESET, resetWheel);
+			addEventListener(TimeLineEvent.RESETME, resetWheel);
 			
 		}
 		
@@ -84,9 +84,9 @@
 			
 		}
 		
-		public function resetWheel():void {
+		public function resetWheel(e:Event):void {
 			
-			trace("RESET WHEEL "+this)
+			trace("RESET WHEEL "+e.target)
 			//SPINNER.wheel.rotation += counter;
 			//SPINNER.arrow.gotoAndStop("on");
 
@@ -186,9 +186,9 @@
 
 		private function spinItDown(e:Event):void{
 			
-			spinToThis = SPIN_ARRAY[(spinNumber)].num;
+		//	spinToThis = SPIN_ARRAY[(spinNumber)].num;
 			// force a color
-			 //spinToThis = 9;
+			 spinToThis =10;
 			
 			trace("SPIN TO THIS "+ spinToThis);
 			switch(spinToThis){
