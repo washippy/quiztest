@@ -32,7 +32,7 @@
 		private var QUIZ_ARRAY:Array= new Array();
 		
 		private var quizNumber:Number = 1; // how many times they take the quiz ... 
-		private var spinNumber:Number = 10; // of 12
+		private var spinNumber:Number = 0; // of 12
 		private var spinToThis:Number = 0; // actual topic number targeted from spin >> shuffled spin array
 		
 		private var greenNum:Number =.917; // green
@@ -44,8 +44,9 @@
 		
 		private var stopHere:Number; 
 		
-		
-		
+		private var overColor:Number =  0xFFFFFF;    
+		private var normalColor:Number =  0x666666;    
+		private var endScreen:endscreen;
 		
 		/* METRIX
 		flmc: finance tools: wheel game: start
@@ -71,6 +72,7 @@
 			FADEBLOCK= new fadeblock();
 			
 			addEventListener(TimeLineEvent.RESETME, resetWheelEvent);
+			addEventListener(TimeLineEvent.RESETSPIN, resetSpinButton);
 			
 		}
 		
@@ -104,10 +106,10 @@
 				
 		}
 	
-		public function launchEnd():void {
+		private function launchEnd():void {
 			trace("ENDING NOW THANKS");
 			
-			var endScreen:endscreen = new endscreen();
+			endScreen = new endscreen();
 		//	endScreen.x=101.8;
 		//	endScreen.y=29.6;
 			endScreen.textHolder.endtitle_tf.text = dataChunk.copy.endtitle;
@@ -121,15 +123,29 @@
 			
 			addChild(endScreen);
 			
-			}
+		}
 		
 		private function printHandler(e:Event):void{
 			trace("PRINT");
 		}
 		private function playagainHandler(e:Event):void{
 			trace("PLAY AGAIN");
+			playAgain();
 		}
-		
+		private function playAgain():void{
+					quizNumber++;
+					spinNumber=0;
+			/* 		for(var tt=0;tt<this.numChildren;tt++){
+									if(getChildAt(tt) == "endScreen"){
+										removeChildAt(tt);
+									}
+								}*/
+			
+					
+				
+					removeChild(endScreen);
+					resetWheel();
+		}
 		
 		private function addSpinnerEvents():void {
 				SPINNER.wheel.mouseEnabled=false;
@@ -168,10 +184,18 @@
 		
 		private function spinMouseOutHandler(e:Event):void{
 			e.target.gotoAndPlay("out");
+			e.target.cta2_tf.textColor = normalColor;	
 		}
-	
+		
+		private function resetSpinButton(e:Event):void{
+			SPINNER.spinbutton.gotoAndPlay("out");
+			SPINNER.spinbutton.cta2_tf.textColor = normalColor;	
+		}
+		
 		private function spinMouseOverHandler(e:Event):void{
 			e.target.gotoAndPlay("over");
+			e.target.cta2_tf.textColor = overColor;
+			
 		}
 		
 		private function beepHitCheck(e:Event):void{
@@ -323,10 +347,12 @@
 	
 		private function mouseOutHandler(e:Event):void{
 			e.target.gotoAndPlay("off");
+			e.target.textHolder.introcta_tf.textColor = normalColor;
 		}
 	
 		private function mouseOverHandler(e:Event):void{
 			e.target.gotoAndPlay("over");
+			e.target.textHolder.introcta_tf.textColor = overColor;
 		}
 		
 		private function startcounter():void{
