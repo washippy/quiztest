@@ -3,9 +3,10 @@
 	<copy>
 		<title><![CDATA[Test your credit knowledge]]></title>
 		<body><![CDATA[You know credit is important. But how much do you really know about it? <BR>Answer these questions to see just how credit savvy you are. <BR>Complete all the questions to earn your certificate.]]></body>
-		<cta><![CDATA[START!]]></cta>
+		<cta><![CDATA[CLICK TO START]]></cta>
 		
-		<endtitle><![CDATA[Congratulations]]></endtitle>
+		
+		<endtitle><![CDATA[Congratulations!]]></endtitle>
 		<endcopy><![CDATA[We here at Ford Credit confer upon you the title of Credit Expert. Go forth and use your knowledge to procure a brighter future.]]></endcopy>
 	</copy>
 	
@@ -107,7 +108,7 @@
 		
 		<!--   ////////////////////////   RED DONE -->
 		<topic title="Obtaining Credit Red">
-			<!--   ////////////////////////   RED DONE 	<question text="What is Credit?" type="MC">
+			<question text="What is Credit?" type="MC">
 				<choice text="A very good thing" correct="false"/>
 				<choice text="A promise that a borrower makes to a lender to repay money and usually interest" correct="true"/>
 				<choice text="Something you must have to succeed in life" correct="false"/>
@@ -126,9 +127,9 @@
 				<choice text="Revolving credit" correct="true"/>
 				<choice text="Secured credit" correct="false"/>
 			</question>
-			-->
+		
 			<question text="A secured credit card can be used to help you establish credit." type="TF">
-				<choice text="TRUE" correct="true"/> <!-- yeah this is confusing... -->
+				<choice text="TRUE" correct="true"/> 
 				<choice text="FALSE" correct="false"/>
 			</question>
 	
@@ -136,12 +137,13 @@
 				<choice text="TRUE" correct="false"/>
 				<choice text="FALSE" correct="true"/>
 			</question>
-			
+							
+							
 			<question text="You may be able to negotiate the price of a vehicle, the apr and payment terms with your dealer."  type="TF">
 				<choice text="TRUE" correct="true"/>
 				<choice text="FALSE" correct="false"/>
 			</question>
-			
+
 			<question text="Revolving credit is credit that is repeatedly available up to a specified amount as periodic repayments are made. The costs, repayments and limits vary and you may pay only a portion of the balance every month."  type="TF">
 				<choice text="TRUE" correct="false"/>
 				<choice text="FALSE" correct="true"/>
