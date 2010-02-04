@@ -32,7 +32,7 @@
 		private var QUIZ_ARRAY:Array= new Array();
 		
 		private var quizNumber:Number = 1; // how many times they take the quiz ... 
-		private var spinNumber:Number = 0; // of 12
+		private var spinNumber:Number = 10; // of 12
 		private var spinToThis:Number = 0; // actual topic number targeted from spin >> shuffled spin array
 		
 		private var greenNum:Number =.917; // green
@@ -70,7 +70,7 @@
 			QUIZ = new Quiz();
 			FADEBLOCK= new fadeblock();
 			
-			addEventListener(TimeLineEvent.RESETME, resetWheel);
+			addEventListener(TimeLineEvent.RESETME, resetWheelEvent);
 			
 		}
 		
@@ -84,24 +84,60 @@
 			
 		}
 		
-		public function resetWheel(e:Event):void {
+		public function resetWheelEvent(e:Event):void {resetWheel()}
+		
+		public function resetWheel():void {
+					if(spinNumber>=12){
+						launchEnd();
+						return;
+					}
+				trace("RESET WHEEL");
+				counter = 1;
+		        counterholder = 1;
+				rotCounter = 0;
+				SPINNER.wheel.rotation =0;
+				SPINNER.arrow.gotoAndStop("off");
+				FADEBLOCK.gotoAndPlay("goaway");
+				addSpinnerEvents();
+				//spinNumberManager();
+				SPINNER.progressbar.gotoAndStop(spinNumber+1);
+				
+		}
+	
+		public function launchEnd():void {
+			trace("ENDING NOW THANKS");
 			
-			trace("RESET WHEEL "+e.target)
-			//SPINNER.wheel.rotation += counter;
-			//SPINNER.arrow.gotoAndStop("on");
+			var endScreen:endscreen = new endscreen();
+		//	endScreen.x=101.8;
+		//	endScreen.y=29.6;
+			endScreen.textHolder.endtitle_tf.text = dataChunk.copy.endtitle;
+			endScreen.textHolder.endcopy_tf.htmlText = dataChunk.copy.endcopy;
+			
+			endScreen.printButton.addEventListener(MouseEvent.CLICK, printHandler);
+			endScreen.playagainButton.addEventListener(MouseEvent.CLICK, playagainHandler);
 
-			//FADEBLOCK.gotoAndPlay("go");
+			//endScreen.printButton.mouseChildren = false;
+			//en//dScreen.playagainButton.mouseChildren = false;
+			
+			addChild(endScreen);
+			
+			}
+		
+		private function printHandler(e:Event):void{
+			trace("PRINT");
+		}
+		private function playagainHandler(e:Event):void{
+			trace("PLAY AGAIN");
 		}
 		
-	
 		
 		private function addSpinnerEvents():void {
-		SPINNER.wheel.mouseEnabled=false;
-		
+				SPINNER.wheel.mouseEnabled=false;
 				SPINNER.spinbutton.addEventListener(MouseEvent.CLICK, spinHandler);
 			    SPINNER.spinbutton.addEventListener(MouseEvent.MOUSE_OUT, spinMouseOutHandler);
 			    SPINNER.spinbutton.addEventListener(MouseEvent.MOUSE_OVER, spinMouseOverHandler);
 			  	SPINNER.spinbutton.mouseChildren=false;
+				SPINNER.spinbutton.buttonMode=true;
 			
 		}
 		
@@ -123,9 +159,11 @@
 		private function spinNumberManager():void{
 			if(spinNumber>=12){
 				spinNumber=0;
+				trace("END THE QUIZ NOW PLEEZE")
 			}else{
 				spinNumber++;
 			}	
+			trace("NEW SPIN NUMBER IS :: "+spinNumber)
 		}
 		
 		private function spinMouseOutHandler(e:Event):void{
@@ -185,10 +223,11 @@
 		}
 
 		private function spinItDown(e:Event):void{
+			trace("SPIN # "+ spinNumber);
 			
-		//	spinToThis = SPIN_ARRAY[(spinNumber)].num;
+			spinToThis = SPIN_ARRAY[(spinNumber-1)].num;
 			// force a color
-			 spinToThis =10;
+			 //spinToThis =10;
 			
 			trace("SPIN TO THIS "+ spinToThis);
 			switch(spinToThis){
@@ -266,6 +305,8 @@
 			intro.startbutton.textHolder.introtitle_tf.text = dataChunk.copy.title;
 			intro.startbutton.textHolder.introcopy_tf.htmlText = dataChunk.copy.body;
 			intro.startbutton.textHolder.introcta_tf.text = dataChunk.copy.cta;
+			intro.startbutton.buttonMode=true;
+			
 			intro.startbutton.addEventListener(MouseEvent.CLICK, clickHandler);
 		    intro.startbutton.addEventListener(MouseEvent.MOUSE_OUT, mouseOutHandler);
 		    intro.startbutton.addEventListener(MouseEvent.MOUSE_OVER, mouseOverHandler);
@@ -300,7 +341,7 @@
 		}
 	
 		private function startQuiz():void{
-			QUIZ.fireitUP(quizNumber, spinToThis);
+			QUIZ.fireitUP(quizNumber, spinNumber, spinToThis);
 		}
 		
 		private function traceEM(element:*, index:int, arr:Array):void {
