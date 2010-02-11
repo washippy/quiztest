@@ -10,13 +10,28 @@
 	import flash.utils.Timer;
 	import flash.events.TimerEvent;
 	import TimeLineEvent;
+	
+	
+	/*
+	
+	Revisions below ...
+
+	1) background - make sure it moves while game is playing
+	2) Animation  - from the initial stage of the
+	3) Disclaimer - increase font
+	4) Intro copy - creative to supply revised copy
+	5) Sound - alternative options
+	6) Incorrect answer - adjust creative for incorrect answer
+	*/
 
     public class CreditTest extends MovieClip{
 	
 		private var QUIZ:Quiz;
 	   	private var FADEBLOCK:fadeblock;
 	   	private var SPINNER:spinner;
-       	private var BACKGROUND:bkg;
+      	private var BACKGROUND:bkg;
+		private var BACKGROUND2:bkg2;
+      
 		private var rightMatrix:ColorMatrix;
 		private var myTimer:Timer;
 		private var XMLparser:XMLParser;
@@ -65,6 +80,15 @@
 			addChild(BACKGROUND);
 			rightMatrix = new ColorMatrix();
 			startcounter();	
+		
+		//	BACKGROUND2 = new bkg2();
+		//	addChild(BACKGROUND2);
+			
+		//	rightMatrix = new ColorMatrix();
+		//	startcounter();
+		
+		
+		
 
 			BEEP = new beep();
 			SPINNER = new spinner();
@@ -93,7 +117,7 @@
 						launchEnd();
 						return;
 					}
-				trace("RESET WHEEL");
+				//trace("RESET WHEEL");
 				counter = 1;
 		        counterholder = 1;
 				rotCounter = 0;
@@ -107,7 +131,7 @@
 		}
 	
 		private function launchEnd():void {
-			trace("ENDING NOW THANKS");
+			//  trace("ENDING NOW THANKS");
 			
 			endScreen = new endscreen();
 		//	endScreen.x=101.8;
@@ -126,10 +150,10 @@
 		}
 		
 		private function printHandler(e:Event):void{
-			trace("PRINT");
+			//  trace("PRINT");
 		}
 		private function playagainHandler(e:Event):void{
-			trace("PLAY AGAIN");
+			//  trace("PLAY AGAIN");
 			playAgain();
 		}
 		private function playAgain():void{
@@ -175,11 +199,11 @@
 		private function spinNumberManager():void{
 			if(spinNumber>=12){
 				spinNumber=0;
-				trace("END THE QUIZ NOW PLEEZE")
+				//  trace("END THE QUIZ NOW PLEEZE")
 			}else{
 				spinNumber++;
 			}	
-			trace("NEW SPIN NUMBER IS :: "+spinNumber)
+			//  trace("NEW SPIN NUMBER IS :: "+spinNumber)
 		}
 		
 		private function spinMouseOutHandler(e:Event):void{
@@ -247,13 +271,13 @@
 		}
 
 		private function spinItDown(e:Event):void{
-			trace("SPIN # "+ spinNumber);
+			//  trace("SPIN # "+ spinNumber);
 			
 			spinToThis = SPIN_ARRAY[(spinNumber-1)].num;
 			// force a color
 			 //spinToThis =10;
 			
-			trace("SPIN TO THIS "+ spinToThis);
+			//  trace("SPIN TO THIS "+ spinToThis);
 			switch(spinToThis){
 			
 				case 1 :
@@ -356,12 +380,16 @@
 		}
 		
 		private function startcounter():void{
-			myTimer = new Timer(50, 360);
+			myTimer = new Timer(50);
+			
 			myTimer.addEventListener("timer", timerHandler);
 			myTimer.start();
 		}
 		
 		private function timerHandler(event:TimerEvent):void {
+			//trace("." + myTimer.currentCount)
+			
+			
 			rightMatrix.rotateHue(5);
 			BACKGROUND.filters = [ rightMatrix.filter ];
 		}
@@ -371,7 +399,7 @@
 		}
 		
 		private function traceEM(element:*, index:int, arr:Array):void {
-            trace(index + " TRACEEM ::"+element);
+            //  trace(index + " TRACEEM ::"+element);
         }
 	
 		private function traceMe(obj:Object):void {
@@ -379,7 +407,7 @@
 				for (var stuff in obj[item]) { 
 					for (var junk in obj[item][stuff]) { 
 					
-			    	trace("OBJ TRACE >>> "+item +"::"+stuff + "::"+junk+  "::"+obj[item][stuff][junk]); 
+			    	  trace("OBJ TRACE >>> "+item +"::"+stuff + "::"+junk+  "::"+obj[item][stuff][junk]); 
 					}
 				}
 			}
@@ -388,7 +416,7 @@
 		private function traceArr(Arr:Array):void {
 			for (var aa=0;aa<Arr.length;aa++) { 
 				for (var bb=0;bb<Arr[aa].length;bb++) { 
-			    		trace("QUIZ ARR > topic:"+aa +"   question[shuffled]:"+bb + " value:" +Arr[aa][bb]); 
+			    		 trace("QUIZ ARR > topic:"+aa +"   question[shuffled]:"+bb + " value:" +Arr[aa][bb]); 
 				}
 			}
         }
@@ -401,7 +429,7 @@
 			// SPIN_ARRAY is a shuffled array of 12 spins, 2 each color
 			
 			var topicLen:int = dataChunk.child("topic").length();
-			trace(topicLen+"  <> "+dataChunk.topic[0].@title)
+			//  trace(topicLen+"  <> "+dataChunk.topic[0].@title)
 		 	for (var i = 0; i < topicLen; i++) {
 				SPIN_ARRAY.push({title:dataChunk.topic[i].@title, num:i+1});
 			}	
@@ -409,19 +437,19 @@
 				SPIN_ARRAY.push({title:dataChunk.topic[k].@title, num:(k+topicLen+1)}); // HARD CODED VALUE ****  ALERT ALERT *****
 			}
 			// trace("SPIN ARR--------------");
-				trace(SPIN_ARRAY[0].num);
+				//  trace(SPIN_ARRAY[0].num);
 				SPIN_ARRAY.shuffle();
-				trace(SPIN_ARRAY[0].num);
+				//  trace(SPIN_ARRAY[0].num);
 
 			//QUIZ is a shuffled array of question numbers :: a map of quiz choices if you will
 		
-		 	trace("TOPICLEN "+topicLen)
+		 	//  trace("TOPICLEN "+topicLen)
 			var choiceArr:Array = new Array();
 			var questionArr:Array = new Array();										
 			for (var j = 0; j < topicLen; j++) {										
 				//var qItems:XMLList = dataChunk.topic[j].question;
 				var qLen = dataChunk.topic[j].child("question").length();//qItems.length;   												
-				trace("QLEN     "+qLen)
+				//  trace("QLEN     "+qLen)
 				questionArr = [];	
 			 	for (var l = 0; l< qLen; l++) {	
 					//var cItems:XMLList = dataChunk.topic[j].question[l].choice;
@@ -435,17 +463,17 @@
 			 	}
 				questionArr.shuffle();
 				QUIZ_ARRAY[j] = questionArr;
-				trace("HUH")
+				//  trace("HUH")
 				
 			}
-			traceArr(QUIZ_ARRAY)
+			//  traceArr(QUIZ_ARRAY)
 			QUIZ.dataObj=dataChunk;
 			QUIZ.QUIZ_ARRAY = QUIZ_ARRAY;
 		}
 						
     
 		Array.prototype.shuffle = function(){
-			trace("SHUFFLE")
+			//  trace("SHUFFLE")
 			
 			for(var i = 0; i < this.length; i++){
 				var a = this[i];
