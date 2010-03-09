@@ -147,7 +147,7 @@
 				<choice text="FALSE" correct="false"/>
 			</question>
 
-			<question text="Revolving credit is credit that is repeatedly available up to a specified amount as periodic repayments are made. The costs, repayments and limits vary and you may pay only a portion of the balance every month."  type="TF">
+			<question text="Revolving credit is credit that is repeatedly available up to a specified amount as periodic repayments are made."  type="TF">
 				<choice text="TRUE" correct="false"/>
 				<choice text="FALSE" correct="true"/>
 			</question>
