@@ -9,6 +9,9 @@
 		public static const RESETSPIN:String = "RESETSPIN";
 		public static const ANIMDONE:String = "ANIMDONE";
 		
+		public static const MC:String = "MC";
+		public static const TF:String = "TF";
+		
 	
 		/* constructor	*/ 
 		public function TimeLineEvent(type:String){
